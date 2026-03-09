@@ -6,7 +6,7 @@
 
 ## Project Demonstration
 
-![Project Video](plannar.webm)
+![Project Video](plannar.gif)
 
 ## Project Overview
 
