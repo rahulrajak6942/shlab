@@ -6,7 +6,7 @@
 
 ## Project Demonstration
 
-https://github.com/rahulrajak6942/shlab/blob/main/plannar.webm?raw=true
+![Project Video](plannar.webm)
 
 ## Project Overview
 
