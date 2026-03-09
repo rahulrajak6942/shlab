@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+
+  <xacro:include filename="$(find shlab_description)/models/robot.xacro"/>
+
+  <xacro:arg name="controllers" default=""/>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(arg controllers)</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

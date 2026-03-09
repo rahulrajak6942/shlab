@@ -1,0 +1,25 @@
+# ROS 2 Build Artifacts
+build/
+install/
+log/
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+
+# Project specific logs
+*.txt
+*.gv
+*.pdf
+launch_full.txt
+executor_error.txt
+build_log*.txt

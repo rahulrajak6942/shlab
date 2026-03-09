@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="cluttered_world">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="libignition-gazebo-physics-system.so" name="ignition::gazebo::systems::Physics"/>
+    <plugin filename="libignition-gazebo-user-commands-system.so" name="ignition::gazebo::systems::UserCommands"/>
+    <plugin filename="libignition-gazebo-scene-broadcaster-system.so" name="ignition::gazebo::systems::SceneBroadcaster"/>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- Ground Plane -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Obstacles -->
+    <model name="cyl_1"><static>true</static><pose>0.4 0.1 0.15 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.03</radius><length>0.3</length></cylinder></geometry></collision>
+      <visual name="v"><geometry><cylinder><radius>0.03</radius><length>0.3</length></cylinder></geometry><material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="box_1"><static>true</static><pose>0.5 -0.2 0.05 0 0 0.5</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.1 0.1 0.1</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.1 0.1 0.1</size></box></geometry><material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="sph_1"><static>true</static><pose>0.6 0.2 0.05 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.05</radius></sphere></geometry></collision>
+      <visual name="v"><geometry><sphere><radius>0.05</radius></sphere></geometry><material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="cyl_2"><static>true</static><pose>0.3 -0.3 0.25 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.02</radius><length>0.5</length></cylinder></geometry></collision>
+      <visual name="v"><geometry><cylinder><radius>0.02</radius><length>0.5</length></cylinder></geometry><material><ambient>1 1 0 1</ambient><diffuse>1 1 0 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="box_2"><static>true</static><pose>0.7 0.0 0.1 0 0 -0.2</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.15 0.15 0.2</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.15 0.15 0.2</size></box></geometry><material><ambient>1 0 1 1</ambient><diffuse>1 0 1 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="sph_2"><static>true</static><pose>0.45 -0.4 0.5 0 0 0</pose>
+      <link name="l">
+      <collision name="c"><geometry><sphere><radius>0.06</radius></sphere></geometry></collision>
+      <visual name="v"><geometry><sphere><radius>0.06</radius></sphere></geometry><material><ambient>0 1 1 1</ambient><diffuse>0 1 1 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="cyl_3"><static>true</static><pose>0.2 0.4 0.15 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.04</radius><length>0.3</length></cylinder></geometry></collision>
+      <visual name="v"><geometry><cylinder><radius>0.04</radius><length>0.3</length></cylinder></geometry><material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="cyl_4"><static>true</static><pose>0.6 -0.4 0.25 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.03</radius><length>0.5</length></cylinder></geometry></collision>
+      <visual name="v"><geometry><cylinder><radius>0.03</radius><length>0.5</length></cylinder></geometry><material><ambient>0.2 0.8 0.2 1</ambient><diffuse>0.2 0.8 0.2 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="sph_3"><static>true</static><pose>0.3 0.3 0.1 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.08</radius></sphere></geometry></collision>
+      <visual name="v"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>0.8 0.2 0.2 1</ambient><diffuse>0.8 0.2 0.2 1</diffuse></material></visual></link>
+    </model>
+
+    <model name="box_3"><static>true</static><pose>0.5 0.5 0.15 0 0 0.8</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.1 0.2 0.3</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.1 0.2 0.3</size></box></geometry><material><ambient>0.2 0.2 0.8 1</ambient><diffuse>0.2 0.2 0.8 1</diffuse></material></visual></link>
+    </model>
+
+  </world>
+</sdf>
