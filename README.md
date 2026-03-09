@@ -4,6 +4,10 @@
 ![MoveIt 2](https://img.shields.io/badge/MoveIt-2-orange)
 ![Gazebo](https://img.shields.io/badge/Gazebo-Ignition-blue)
 
+## Project Demonstration
+
+https://github.com/rahulrajak6942/shlab/blob/main/plannar.webm?raw=true
+
 ## Project Overview
 
 This project implements a complete pipeline for a 6-DOF robotic arm to navigate through a "forest" of obstacles in a simulated environment. The core of the project is a custom **Hybrid APF-RRT Planner** which combines the global exploration capabilities of Rapidly-exploring Random Trees (RRT) with the local obstacle avoidance and goal attraction of Artificial Potential Fields (APF).
